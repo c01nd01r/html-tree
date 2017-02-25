@@ -30,6 +30,8 @@ doc.head.appendChild( styleElem );
 
 //------------------------------
 
+
+
 codeInput.oninput = function () {
   setHeadersDefs();
   isWHolePage = false;
@@ -41,8 +43,6 @@ codeInput.oninput = function () {
   bemMessage.classList.add( 'gnr-hidden' );
 
   createTreeFromHTML ( this.value );
-
-  addClassesActions();
 };
 
 //------------------------------
@@ -66,8 +66,6 @@ function createTreeFromHTML ( code ) {
   var codeOutput = document.createElement('div');
 
   if( !code ) {
-    treeContent.classList.add('gnr-hidden');
-    treePlaceHolder.classList.remove('gnr-hidden');
     setRange();
     return;
   }
@@ -86,11 +84,12 @@ function createTreeFromHTML ( code ) {
   treeContent.appendChild( list );
 
   treeContent.classList.remove('gnr-hidden');
-  treePlaceHolder.classList.add('gnr-hidden');
+
 
   setRange();
 
-  showCodeErrors();
+
+  return treeContent.outerHTML;
 }
 
 //------------------------------
