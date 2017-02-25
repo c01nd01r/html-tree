@@ -314,15 +314,6 @@ function setRange () {
 
 //------------------------------
 
-rangeDeep.oninput = function () {
-  var level = +this.value;
-  var styles = '.gnr-level--' + level + '{ display: none }';
-  styleElem.innerHTML = styles;
-  valDeep.innerHTML = this.value;
-}
-
-//------------------------------
-
 function showCodeErrors () {
   showBemMessage();
   checkHeadersLevels();
