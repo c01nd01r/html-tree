@@ -97,7 +97,7 @@ function makeList ( elem, level ) {
   }
 
   if ( level === 1 ) {
-    tagName = 'BODY';
+    tagName = 'Component root';
     className = '';
   }
 
