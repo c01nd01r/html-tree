@@ -1,6 +1,6 @@
 var doc = document;
 var codeInput = doc.querySelector('.gnr-code-input');
-var treeContent = doc.querySelector('.gnr-tree__content');
+// var treeContent = doc.querySelector('.gnr-tree__content');
 var treePlaceHolder = doc.querySelector('.gnr-tree__placeholder');
 var rangeDeep = doc.querySelector('.gnr-deep__range');
 var valDeep = doc.querySelector('.gnr-deep__digit');
@@ -52,13 +52,15 @@ function createTreeFromHTML ( code ) {
   var codeOutput = document.createElement('div');
 
   if( !code ) {
-    setRange();
+    // setRange();
     return;
   }
 
   codeOutput.innerHTML = code;
 
-  var items = makeList( codeOutput, 1 );
+  var items = makeList(codeOutput, 1);
+  var treeContent = doc.createElement('ul');
+  treeContent.classList.add('gnr-tree__content');
 
   if ( treeContent.childElementCount > 0 ) {
     treeContent.removeChild( treeContent.firstElementChild );
@@ -72,7 +74,7 @@ function createTreeFromHTML ( code ) {
   treeContent.classList.remove('gnr-hidden');
 
 
-  setRange();
+  // setRange();
 
 
   return treeContent.outerHTML;
