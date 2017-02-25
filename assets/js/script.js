@@ -31,20 +31,6 @@ doc.head.appendChild( styleElem );
 //------------------------------
 
 
-
-codeInput.oninput = function () {
-  setHeadersDefs();
-  isWHolePage = false;
-  hasBemWarning = false;
-  maxDeep = 1;
-
-  headersMessage.classList.add( 'gnr-hidden' );
-  headersMessageTree.classList.add( 'gnr-hidden' );
-  bemMessage.classList.add( 'gnr-hidden' );
-
-  createTreeFromHTML ( this.value );
-};
-
 //------------------------------
 
 function setHeadersDefs () {
